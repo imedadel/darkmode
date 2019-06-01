@@ -1,14 +1,8 @@
-console.log('Try this yo')
-const generateID =  () => ('darkMode-' + Math.random().toString(36).substr(2, 9))
-
 chrome.runtime.onMessage.addListener((request,sender, sendResponse) => {
 	if(request) {
-		console.log('set to light')
 		document.body.removeChild(document.body.children[0])
 		document.head.removeChild(document.head.lastChild)
 	} else {
-		console.log('set to dark')
-		
 		const darkDiv = document.createElement('div')
 		darkDiv.style.cssText = `width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: white; mix-blend-mode: difference; z-index: 2147483646;`
 		// Insert blending div at the top
