@@ -2,12 +2,11 @@
 	"manifest_version": 2,
 	"name": "DarkMode",
 	"version": "0.0.1",
-	"content_scripts": [
-		{
-			"matches": [
-				"<all_urls>"
-			],
-			"js": ["content.js"]
-		}
-	]
+	"browser_action": {
+		"name": "Turn On/Off Dark Mode"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["<all_urls>"]
 }
