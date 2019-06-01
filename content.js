@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener((request,sender, sendResponse) => {
 		document.body.insertAdjacentElement('afterbegin', darkDiv)
 
 		// CSS to isolate media
-		const css = `img, picture, video, .emoji, iframe {isolation: isolate; mix-blend-mode: difference !important; }`
+		const css = `img, picture, video, .emoji, iframe, canvas, svg, figure {isolation: isolate; mix-blend-mode: difference !important; }`
 		const isolationStyle = document.createElement('style')
 		isolationStyle.type = `text/css`
 		isolationStyle.appendChild(document.createTextNode(css))
